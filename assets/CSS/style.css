@@ -1,0 +1,213 @@
+:root {
+    /* Definição de variáveis de cores base */
+    --primary-color: #50e3c2;
+    --secondary-color: #9ed2ff;
+    --bg-card: #f0f8ff;
+    --text-color: #333;
+
+    /* Cores de Mensagens de Validação */
+    --error-bg: #ffebe6;
+    --error-text: #9f3a38;
+
+    /* NOVAS CORES DE CLASSIFICAÇÃO IMC */
+    --color-low-bg: #fff3cd;
+    /* Laranja Claro (Abaixo do peso) */
+    --color-low-text: #856404;
+
+    --color-normal-bg: #d4edda;
+    /* Verde Claro (Peso Ideal) */
+    --color-normal-text: #155724;
+
+    --color-overweight-bg: #f6af8c;
+    /* Amarelo Claro (Sobrepeso) */
+    --color-overweight-text: #6b4e0a;
+
+    --color-obesity1-bg: #f5c6cb;
+    /* Vermelho Suave (Obesidade Grau I) */
+    --color-obesity1-text: #721c24;
+
+    --color-obesity2-bg: #fa939a;
+    /* Vermelho Médio (Obesidade Grau II) */
+    --color-obesity2-text: #8e2430;
+
+    --color-obesity3-bg: #dc3545;
+    /* Vermelho Forte (Obesidade Grau III) */
+    --color-obesity3-text: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--secondary-color);
+    font-family: 'Arial', sans-serif;
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 2rem;
+}
+
+.containerPrincipal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--bg-card);
+    max-width: 600px;
+    width: 100%;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.title {
+    padding-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 900;
+}
+
+.containerInput {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    padding-bottom: 2rem;
+}
+
+label {
+    font-weight: bold;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+input {
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.inputAlturaPeso {
+    margin-top: 2rem;
+}
+
+input:hover,
+input:focus {
+    /* Combinação de hover e focus */
+    border-color: #9ed2ff;
+    /* Cor da borda ativa/hover */
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(158, 210, 255, 0.3);
+}
+
+.button {
+    text-align: center;
+    /* Centraliza o botão dentro da div */
+    width: 100%;
+}
+
+button {
+    padding: 12px 25px;
+    border-radius: 6px;
+    border: none;
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+button:hover {
+    background-color: #43c1a2;
+}
+
+/* --- ESTILOS DE RESULTADO --- */
+.resultado {
+    width: 100%;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.resultado p {
+    padding: 18px;
+    border-radius: 8px;
+    font-weight: bold;
+    line-height: 1.6;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* ------------------------------------- */
+/* CLASSES DE CORES DINÂMICAS DO JAVASCRIPT */
+/* ------------------------------------- */
+
+/* Abaixo do peso (imc-low) */
+.imc-low {
+    background-color: var(--color-low-bg);
+    color: var(--color-low-text);
+
+}
+
+/* Peso ideal (imc-normal) */
+.imc-normal {
+    background-color: var(--color-normal-bg);
+    color: var(--color-normal-text);
+
+}
+
+/* Sobrepeso (imc-overweight) */
+.imc-overweight {
+    background-color: var(--color-overweight-bg);
+    color: var(--color-overweight-text);
+
+}
+
+/* Obesidade grau I (imc-obesity-1) */
+.imc-obesity-1 {
+    background-color: var(--color-obesity1-bg);
+    color: var(--color-obesity1-text);
+
+}
+
+/* Obesidade grau II (imc-obesity-2) */
+.imc-obesity-2 {
+    background-color: var(--color-obesity2-bg);
+    color: var(--color-obesity2-text);
+
+}
+
+/* Obesidade grau III (Mórbida) (imc-obesity-3) */
+.imc-obesity-3 {
+    background-color: var(--color-obesity3-bg);
+    color: var(--color-obesity3-text);
+
+}
+
+/* Estilo de Erro (manter a validação) */
+.erro {
+    background-color: var(--error-bg);
+    color: var(--error-text);
+
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 480px) {
+    .containerPrincipal {
+        margin: 20px auto;
+        padding: 1.5rem;
+    }
+
+    input,
+    button {
+        font-size: 15px;
+    }
+}
